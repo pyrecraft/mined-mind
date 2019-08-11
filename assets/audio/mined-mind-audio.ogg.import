@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mined-mind-audio.ogg-858fb109f50dfa48fd325fe19b175b1e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/mined-mind-audio.ogg"
+dest_files=[ "res://.import/mined-mind-audio.ogg-858fb109f50dfa48fd325fe19b175b1e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
