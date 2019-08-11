@@ -10,14 +10,9 @@ data_*/
 # Executables
 builds
 
-# Etc
-.DS_Store
-
-# Etc
-.DS_Store
-
-# Etc
-.DS_Store
+# Music
+*.wav
+*.wav.import
 
 # Etc
 .DS_Store
