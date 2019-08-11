@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/Commodore Angled v1.2.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.521569, 0.14902, 0.14902, 1 )
+shadow_size = 2
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="Button" type="Button"]
+margin_left = 556.971
+margin_top = 254.097
+margin_right = 694.971
+margin_bottom = 317.097
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Push"
+__meta__ = {
+"_edit_group_": true
+}
