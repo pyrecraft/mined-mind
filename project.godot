@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Only One"
+config/name="Mined Mind"
 run/main_scene="res://src/Main.tscn"
 config/icon="res://assets/images/icon.png"
 

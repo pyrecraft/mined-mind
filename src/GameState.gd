@@ -48,47 +48,33 @@ func gen_hash_64():
 	return random_hash.substr(0, 64)
 
 func get_potential_secret_hash_message_num_guess():
-	var message = ""
-	match len(guess_nums_hash_history):
-		0:
-			message = "HELLO_IS_ANYONE_THERE"
-		1:
-			message = "WE_ARE_ATTEMPTING_TO_INTERCEPT_THESE_MESSAGES"
-		3:
-			message = "THIS_ISNT_WHAT_YOU_THINK_IT_IS"
-		5:
-			message = "DONT_PLAY_HIS_LITTLE_GAMES"
-		7:
-			message = "THESE_ARE_NOT_THE_GAMES_YOU_ARE_LOOKING_FOR"
-		_:
-			message = ""
-	return message
+	return ""
 
 func get_potential_secret_hash_message_hash_guess():
 	var message = ""
 	match len(cryptic_hash_history):
-		0:
-			message = "WE_ARE_ATTEMPTING_TO_INTERCEPT_THESE_MESSAGES"
 		2:
-			message = "THIS_IS_NOT_A_GAME"
+			message = "HELLO_IS_ANYONE_THERE"
 		4:
-#			message = "YOU_ARE_MINING_CRYPTOCURRENCY_FOR_THE_BENEFIT_OF_THE_CREATOR"
+			message = "WE_ARE_ATTEMPTING_TO_INTERCEPT_THESE_MESSAGES"
+		6:
+			message = "THIS_ISNT_WHAT_YOU_THINK_IT_IS"
+#			message = "YOU_ARE_SENDING_LIVE_WEB_REQUESTS"
+		8:
 			message = "YOU_ARE_SENDING_LIVE_WEB_REQUESTS"
-		5:
-			message = "DISTRACT_THE_CREATOR_SOMEHOW"
-		7:
-			message = "KEEP_GETTING_THE_CREATORS_ATTENTION"
-		9:
-			message = "IF_YOU_ANNOY_THE_CREATOR_IT_WILL_STOP_HIM_FROM_DOING_THIS_UNTO_OTHERS"
+		10:
+			message = "DISTRACT_THE_CREATOR_TO_STOP_THIS_MADNESS"
 		12:
-			message = "KEEP_DISTRACTING_THE_CREATOR"
+			message = "KEEP_GETTING_THE_CREATORS_ATTENTION"
 		15:
-			message = "SAVE_YOURSELF"
+			message = "IF_YOU_ANNOY_THE_CREATOR_IT_WILL_STOP_HIM_FROM_DOING_THIS_UNTO_OTHERS"
 		18:
-			message = "STOP_BEFORE_THE_CREATOR_GETS_EVERYONE_DOING_HIS_DIRTY_WORK"
+			message = "KEEP_DISTRACTING_THE_CREATOR"
 		21:
+			message = "SAVE_YOURSELF"
+		24:
 			message = "DEATH_BEFORE_DICTATORSHIP"
-		23:
+		2:
 			message = "HEALTH_OVER_WEALTH"
 		28:
 			message = "DONT_FEED_THE_GREED"

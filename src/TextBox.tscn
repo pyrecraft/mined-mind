@@ -83,8 +83,8 @@ text = "SIGINT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -20.4
-pitch_scale = 3.01
+volume_db = -22.924
+pitch_scale = 4.87
 [connection signal="timeout" from="RichTextLabel/VisibleTextTimer" to="." method="_on_VisibleTextTimer_timeout"]
 [connection signal="timeout" from="RichTextLabel/NextLineTimer" to="." method="_on_NextLineTimer_timeout"]
 [connection signal="timeout" from="RichTextLabel/QueueVarTimer" to="." method="_on_QueueVarTimer_timeout"]
