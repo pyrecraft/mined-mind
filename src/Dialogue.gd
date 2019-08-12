@@ -100,9 +100,9 @@ const HASH_FIRST_ALERT = [
 	"",
 	"Looks like you found the alert button.",
 	"But what you haven't found yet is the matching hash.",
+	"[color=gray]\"..mind control? What world do you think we live in? No crazy talk here at 91.5 FM!\"[/color]",
 	"There is ONLY ONE way to win this game.",
 	"Do exactly as I say.",
-	"[color=gray]\"..mind control? What world do you think we live in? No crazy talk here at 91.5 FM!\"[/color]",
 	"Find that hash."
 ]
 
