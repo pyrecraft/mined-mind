@@ -85,7 +85,7 @@ func queue_number_guess_incorrect(nums):
 			_:
 				dialogue_arr = Dialogue.INCORRECT_NUM_GUESS_TEXT_1
 	for i in range(0, len(dialogue_arr)):
-		if i == 0:
+		if i == 1:
 			text_queue.push_back(dialogue_arr[i] % str(nums[0]))
 		else:
 			text_queue.push_back(dialogue_arr[i])
@@ -119,14 +119,13 @@ func clear_text():
 		$RichTextLabel.append_bbcode("\n")
 
 func has_text_to_display():
-#	print("visible characters: " + str($RichTextLabel.visible_characters))
-#	print("total char count: " + str($RichTextLabel.get_total_character_count()))
-	
 	return $RichTextLabel.visible_characters < $RichTextLabel.get_total_character_count()
 
 func _on_VisibleTextTimer_timeout():
 	if has_text_to_display():
 		$RichTextLabel.visible_characters += 1
+		if ($RichTextLabel.visible_characters % 3 == 0):
+			$AudioStreamPlayer.play()
 		# Just finished a page
 		if text_queue.empty() and $RichTextLabel.visible_characters == $RichTextLabel.get_total_character_count():
 			emit_signal("page_completed")

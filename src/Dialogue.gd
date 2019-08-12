@@ -1,12 +1,12 @@
 extends Node
 
-const PRESET_HASH = "D0B6ECFF0F2BB8FF4F4DCB634A36CDB8F322DC9702780639426F8425B2C31AC0AEBE7B7819CC30602C448C50EB3C6A69E21280A65A8D4B20B66C5985F2021815DDB0D5F862AF7F53CF4112ED758C2904D96C0E7CDE99A09E1011851E895F306683B09DEAAAF63B7EE82BC53382E045991EB039071091C6BDE7F0FD8CCE1AB9024047124BE3BF19251A1D490291E5B4EB7340E770AEF6C391149D6D16371B139885E892601DB7C665FE2E551CDEF8BE6D1E8A534A57E414857EB5CB1761B2251846566838255988F294022BBADFBEE6063974ECD1A5BB263BA1B5C8FE623B04843AFE5638C5CCDD0AC3350B3C653E9B83E69E46EA5995C6BA89F9FE291E34A95B9B244855BFEC21C140502AFB41091623E990C33C187825954EEFECE278DFD0623CE822CCDC72746EB1F63DE77B3BCBDCBB593A4B407DB719BFDBBF8476580E7507296C7932BAB5039786B6C3BAC63262C2B68AD30C0286ED1AD5FFFB5FFA1603724FDD5BC2EE0C35C6582DDC7591BD2F74831455706A1DE12CF36CFEA53BE63FAE7B436721542E27761CF22B4EF2FF1613FBD79C3D390E5D6585A21E11FF5EC1970CFF0CF206ADAE1653A0978EA2AA199563935D94E07944935F1624871B843D80C86FA99E6CADB473136669DF3CC2CBED39F604AAB886A71AF82BBBB9A719A9315193429BD4DCED5BF016D6D90870A51235B804B24DC0E6F53D5A59C19CB566B42975E45E90414DAD0D9D2207FCF7AEB364B343B0AAF4CE4EFE2E697DBC7EE967417D40B3A9449B5DD52E72ABC5310AE511B8D27B607985FFA8A07A5B3CC6429EE44FB170D772F360C686581378AD98737B94E6F228BA637B929676048EADD02DFB34D0CE59F2EB20E11A2F1C11779966997A8197913017FE2821EC738FE2A1F0690A5C3E0002419B7DF307F6F2B63139B4A0837DA455F1FDE8D85293DC4E4DD044FD2917CCFF8BB8D09B4D8580AACBD9EFC4540A9B88D2FEB9D7E5702700BF0B603715B943C56E0E411CB90187D63AB05E97112903F53F0EC278300DF2BA95F9A7052CBA26145ECEC1334D4A5241255F8539D9242DC810"
+const PRESET_HASH = "d634727437eafe01ea5baae9f36e03c6df0181392a3927049db8cdd5e7512b6c679775e9c095305b2430ff6861047c5ef3544baab45b5580b3d0b63c7241f74c8ad3da3323231ba3507336f75a43e06c24d055d35633b21bca8f6f56ce02e013121577a8b7be9fd53bacf5dc3933d2fe222f8130c4823f4b42c0b92a3927049db8cdd5e7512b6c679775e9c095305b2430ff680052f9118d246c9ee408e74d318b2b3dec9b776012ab1570ea04ce24ba1428575529f33b21bca8f6f56ce02e013121572a3927049db8cdd5e7512b6c679775e9c095305b2430ff687a8b7be9fd53bacf5dc3933d2fe222f8130c4823f4b42c0b9bfdb8d0941b1081cda1d2962a3927049db8cdd5e7512b6c679775e9c095305b2430ff68f78afd9f3af2100550012fa3f9dfa87f86ff0342b503590c9e577976c6b2157e5ddc8bd9407293a2692d1adc1801b1490d8bdfb9b0c24b4f3284c0318f222ef2d3393cd5fcab35df9eb7b8a786ff0342b503590c9e577976c6b2157e5ddc8bd9407293a275121310e20ec65f6f8acb12b33f9255758241ab42ec40ae0751ba210677b9ced3b2b813d47e804ee9c642d8119f250086ff0342b503590c9e577976c6b2157e5ddc8bd9407293a29b0c24b4f3284c0318f222ef2d3393cd5fcab35df9eb7b8a775121310e20ec65f6f8acb12b33653d550d42c60e34a57f6337053ab1323233ad3da8c47f1427c36b0d3b0855b54baab4453fe5c7401686ff0342b503590c9e577976c6b2157e5ddc8bd9407293a2931810fd6c30e63f9eaab5ae10efae734727436d"
 
 const INTRO_TEXT = [
 	"Hello.",
 	"My name is Jon.",
 	"There is ONLY ONE way to win this game.",
-	"Do exactly as I say."
+	"Do exactly as I say.",
 ]
 
 const BUTTONS_TEXT = [
@@ -18,62 +18,61 @@ const BUTTONS_TEXT = [
 ]
 
 const RED_BUTTON_PRESSED_TEXT = [
-	"\nThat was a test to see if I could trust you.",
+	"",
+	"That was a test to see if I could trust you.",
 	"You failed.",
 	"There is ONLY ONE way to win this game.",
 	"Do exactly as I say.",
+	"",
 	"You lose."
 ]
 
 const BLUE_BUTTON_PRESSED_TEXT = [
 	"\nGood.",
-	"[color=gray]..free tickets for the 100th caller! Simply dial 1-800-272-3838 to enter..[/color]",
+	"[color=gray]\"..coming at you LIVE from 88.3 FM! The #1 hit music station since 1984..\"[/color]",
 	"Now we’re going to play a little guessing game.",
 	"I’m thinking of a number 1-10.",
 	"Guess my number."
 ]
 
 const FIRST_INCORRECT_NUM_GUESS_TEXT = [
-	"\nWrong number: %s",
-	"Don't worry you can keep trying.",
-	"Guess again."
+	"",
+	"You guessed %s and it was wrong.",
+	"Don't worry you can keep trying."
 ]
 
 const INCORRECT_NUM_GUESS_TEXT_1 = [
-	"Wrong number: %s",
+	"",
+	"You guessed %s and it was wrong.",
 	"Keep trying."
 ]
 
 const INCORRECT_NUM_GUESS_TEXT_2 = [
-	"Wrong number: %s",
+	"",
+	"You guessed %s and it was wrong.",
 	"Guess again."
 ]
 
 const INCORRECT_NUM_GUESS_TEXT_3 = [
-	"Wrong number: %s",
+	"",
+	"You guessed %s and it was wrong.",
 	"You'll get it eventually."
 ]
 
 const CORRECT_NUM_GUESS_TEXT = [
 	"\nAlright you got it. It was %s.",
+	"Notice the \"true\" value in the response field.",
+	"",
 	"Now let's move on.",
 	"But remember.",
 	"There is ONLY ONE way to win this game.",
 	"Do exactly as I say.",
 ]
 
-const POSSIBLE_NUM_GUESS_SECRET_MESSAGES = [
-	"",
-	"hello_is_anyone_there",
-	"",
-	"im_trying_to_reach_you",
-	"im_intercepting_messages_to_try_and_get_to_you"
-]
-
 const HASH_CODE_START_TEXT = [
 	"",
 	"Let's play another guessing game.",
-	"[color=gray]..she described 21 ways that companies, and even individuals, might be making money off your data and your time..[/color]",
+	"[color=gray]\"..she described 21 ways that companies, and even individuals, might be making money off your data and your time..\"[/color]",
 	"Only this time, you're not guessing a number.",
 	"You're guessing a hash code.",
 ]
@@ -81,7 +80,6 @@ const HASH_CODE_START_TEXT = [
 const HASH_CODE_FIRST_REQUEST_TEXT = [
 	"",
 	"Create a hash code using the + button.",
-#	"[color=gray]..she explained she couldn't stop playing but didn't know why. She knew well the game wasn't good..[/color]",
 	"Then send it just like before.",
 	"When you get a match, notify me with the alert button.",
 ]
@@ -95,6 +93,7 @@ const FIRST_HASH_REQUEST_SENT = [
 const HASH_ALERT_SAME_HISTORY_COUNT = [
 	"",
 	"Not much has changed since the last time you alerted me.",
+	"Keep searching for that hash."
 ]
 
 const HASH_FIRST_ALERT = [
@@ -103,6 +102,7 @@ const HASH_FIRST_ALERT = [
 	"But what you haven't found yet is the matching hash.",
 	"There is ONLY ONE way to win this game.",
 	"Do exactly as I say.",
+	"[color=gray]\"..mind control? What world do you think we live in? No crazy talk here at 91.5 FM!\"[/color]",
 	"Find that hash."
 ]
 
@@ -132,6 +132,7 @@ const HASH_FOURTH_ALERT = [
 	"You are the laziest worker I've ever encountered.",
 	"Pleaing for help rather than doing your job.",
 	"The next alert better be when you find that hash.",
+	"[color=gray]\"..what they didn’t realize is that they were literally mining. Every request was a real web request to a remote server..\"[/color]",	
 	"Remember.",
 	"There is ONLY ONE way to win this game.",
 	"Do exactly as I say.",
@@ -173,17 +174,15 @@ const HASH_FIFTH_ALERT = [
 	"",
 	"[color=maroon]Credits[/color]",
 	"",
-	"[color=maroon]All artwork, programming, and music done by Jon aka PyreCraft[/color]",
+	"[color=maroon]All artwork, programming, and music done by Jon aka Pyre Craft[/color]",
 	"",
 	"[color=maroon]Created for the Game Maker's Toolkit Game Jam 2019[/color]",
 	"",
 	"[color=maroon]Game Engine: Godot[/color]",
-	"",
 	"[color=maroon]Music: Ableton Live 10[/color]",
+	"[color=maroon]Cover Art: Adobe Illustrator[/color]",
 	"",
-	"[color=maroon]Cover Art: Aseprite[/color]",
-	"",
-	"[color=maroon]Game was heavily inspired by The Republia Times by Lucas Pope[/color]",
+	"[color=maroon]Game was partially inspired by The Republia Times by Lucas Pope[/color]",
 	"",
 	"[color=maroon]Thanks for playing![/color]",
 	"",

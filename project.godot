@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Only One"
 run/main_scene="res://src/Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/images/icon.png"
 
 [autoload]
 
@@ -26,7 +26,8 @@ Dialogue="*res://src/Dialogue.gd"
 
 [display]
 
-window/size/width=1200
+window/size/width=1250
+window/size/height=700
 
 [rendering]
 

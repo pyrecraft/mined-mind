@@ -2,16 +2,16 @@ extends Polygon2D
 
 signal sent_guess
 
+var text_to_update = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ResponseText.text = ""
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func update_response_field(response):
-	$ResponseText.text = response
+	$ResponseText.text = ""
+	text_to_update = response
+	$SendRequestTimer.start()
 
 func get_current_number():
 	return int($InputField.text)
@@ -31,3 +31,7 @@ func _on_DecButton_pressed():
 
 func _on_SendRequestButton_pressed():
 	emit_signal("sent_guess", get_current_number())
+
+
+func _on_SendRequestTimer_timeout():
+	$ResponseText.text = text_to_update

@@ -30,19 +30,19 @@ font_data = ExtResource( 2 )
 [node name="FirstButtons" type="Node"]
 
 [node name="RedButton" parent="." instance=ExtResource( 1 )]
-margin_left = 699.299
-margin_top = 253.748
-margin_right = 837.299
-margin_bottom = 316.748
+margin_left = 725.0
+margin_top = 253.0
+margin_right = 876.0
+margin_bottom = 316.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 text = ":("
 
 [node name="BlueButton" parent="." instance=ExtResource( 1 )]
-margin_left = 950.0
-margin_top = 252.817
-margin_right = 1088.0
-margin_bottom = 315.817
+margin_left = 975.0
+margin_top = 253.0
+margin_right = 1125.0
+margin_bottom = 316.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )

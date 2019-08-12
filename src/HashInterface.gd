@@ -3,12 +3,16 @@ extends Polygon2D
 signal sent_request
 signal alert_pressed
 
+var text_to_update = ""
+
 func _ready():
 	$ResponseText.text = ""
 	$InputField.text = ""
 
 func update_response_field(response):
-	$ResponseText.text = response
+	$ResponseText.text = ""
+	text_to_update = response
+	$SendRequestTimer.start()
 
 func get_current_hash():
 	return $InputField.text
@@ -31,3 +35,6 @@ func _on_DelHashButton_pressed():
 
 func _on_AlertButton_pressed():
 	emit_signal("alert_pressed")
+
+func _on_SendRequestTimer_timeout():
+	$ResponseText.text = text_to_update

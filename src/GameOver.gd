@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE) or Input.is_mouse_button_pressed(BUTTON_LEFT) or Input.is_key_pressed(KEY_ENTER):
-		get_tree().change_scene("res://Main.tscn")
+		get_tree().change_scene("res://src/Main.tscn")
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://src/Main.tscn")

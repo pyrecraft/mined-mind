@@ -12,7 +12,7 @@ enum state {
 
 func _ready():
 	randomize() 
-	random_number = randi() % 11 + 1 # 1-10
+	random_number = randi() % 10 + 1 # 1-10
 
 var current_state = state.INITIAL
 
@@ -22,7 +22,9 @@ func is_guess_number_correct(num):
 	return random_number == num
 
 var guess_nums = []
-var hash_history = []
+var guess_nums_hash_history = []
+var guess_hash_history = []
+var cryptic_hash_history = []
 
 var hash_history_size_last_alert = 0
 var alert_count = 0
@@ -45,52 +47,80 @@ func gen_hash_64():
 	random_hash = random_hash.substr(0, random_cut_point) + random_hash.substr(random_cut_point, 69 - random_cut_point)
 	return random_hash.substr(0, 64)
 
-func get_potential_secret_hash_message():
+func get_potential_secret_hash_message_num_guess():
 	var message = ""
-	match len(hash_history):
+	match len(guess_nums_hash_history):
+		0:
+			message = "HELLO_IS_ANYONE_THERE"
 		1:
-			message = "we_are_intercepting_this_request_to_try_and_help_you"
+			message = "WE_ARE_ATTEMPTING_TO_INTERCEPT_THESE_MESSAGES"
 		3:
-			message = "you_are_actually_sending_live_web_requests_for_the_benefit_of_the_creator"
+			message = "THIS_ISNT_WHAT_YOU_THINK_IT_IS"
 		5:
-			message = "stop_before_he_gets_everyone_doing_his_dirty_work_!"
-		6:
-			message = "close_your_browser_!_you_are_literally_mining_cryptocurrency_for_the_creator_of_this_game"
-		8:
-			message = "distract_the_creator"
-		11:
-			message = "if_you_annoy_him_it_will_stop_him_from_doing_this_to_others"
+			message = "DONT_PLAY_HIS_LITTLE_GAMES"
+		7:
+			message = "THESE_ARE_NOT_THE_GAMES_YOU_ARE_LOOKING_FOR"
+		_:
+			message = ""
+	return message
+
+func get_potential_secret_hash_message_hash_guess():
+	var message = ""
+	match len(cryptic_hash_history):
+		0:
+			message = "WE_ARE_ATTEMPTING_TO_INTERCEPT_THESE_MESSAGES"
+		2:
+			message = "THIS_IS_NOT_A_GAME"
+		4:
+#			message = "YOU_ARE_MINING_CRYPTOCURRENCY_FOR_THE_BENEFIT_OF_THE_CREATOR"
+			message = "YOU_ARE_SENDING_LIVE_WEB_REQUESTS"
+		5:
+			message = "DISTRACT_THE_CREATOR_SOMEHOW"
+		7:
+			message = "KEEP_GETTING_THE_CREATORS_ATTENTION"
+		9:
+			message = "IF_YOU_ANNOY_THE_CREATOR_IT_WILL_STOP_HIM_FROM_DOING_THIS_UNTO_OTHERS"
+		12:
+			message = "KEEP_DISTRACTING_THE_CREATOR"
+		15:
+			message = "SAVE_YOURSELF"
+		18:
+			message = "STOP_BEFORE_THE_CREATOR_GETS_EVERYONE_DOING_HIS_DIRTY_WORK"
 		21:
-			message = "ultimately_you_may_be_better_off_just_shutting_the_whole_thing_down"
-		35:
-			message = "unplug_your_machine"
+			message = "DEATH_BEFORE_DICTATORSHIP"
+		23:
+			message = "HEALTH_OVER_WEALTH"
+		28:
+			message = "DONT_FEED_THE_GREED"
+		33:
+			message = "LEAVE_WHILE_YOU_CAN"
+		38:
+			message = "STOP_THIS_MADNESS"
+		41:
+			message = "CTRL+W"
+		45:
+			message = "CTRL+Q"
 		50:
-			message = "if_you_are_reading_this_then_wow_i_am_amazed_you_literally_sent_50_messages_please_leave_a_comment_you_are_probably_the_most_committed_player_of_this_game_:D"
+			message = "YOU_HAVE_JUST_MINED_50_TIMES_FOR_THE_CREATOR"
+		100:
+			message = "YOU_HAVE_JUST_MINED_100_TIMES_FOR_THE_CREATOR"
 		_:
 			message = ""
 	return message
 
 func build_hash_json_response():
 	var api_url = "https://scrtntwrk.net/h@ckth3p1@n3t/scrthshcde1234/hash_miner"
-	var response = "{\n  \"data\": [%s\n  ],\n  \"meta\": {\n    \"api\": \"%s\",\n    \"timestamp\": \"%s\",\n    \"cryptic_hash\": \"%s\"\n  }\n}"
+	var response = "{\n  \"data\": [%s\n  ],\n  \"meta\": {\n    \"api\": \"%s\",\n    \"frequency\": 89.1,\n    \"timestamp\": %s\n  }\n}"
 	var json_hashes = ""
-	var secret_message = get_potential_secret_hash_message()
-#	var secret_message = Dialogue.POSSIBLE_NUM_GUESS_SECRET_MESSAGES[randi() % len(Dialogue.POSSIBLE_NUM_GUESS_SECRET_MESSAGES)]
-	var cryptic_hash = create_random_hash_with_secret_message(secret_message)
-	for i in range(0, len(hash_history)):
-		json_hashes += "\n    {\n      \"guess\": \"%s\",\n      \"response\": %s\n    }," % [str(hash_history[i]), str(false).to_lower()]
-	return response % [json_hashes.substr(0, len(json_hashes)-1), api_url, str(OS.get_ticks_msec()), cryptic_hash]
+	for i in range(0, len(cryptic_hash_history)):
+		json_hashes += "\n    {\n      \"response\": %s,\n      \"guess\": \"%s\",\n      \"cryptic_hash\": \"%s\"\n    }," % [str(false).to_lower(), str(guess_hash_history[i]), cryptic_hash_history[i]]
+	return response % [json_hashes.substr(0, len(json_hashes)-1), api_url, str(OS.get_ticks_msec())]
 
 func build_json_response_nums():
 	var api_url = "https://scrtntwrk.net/h@ckth3p1@n3t/scrthshcde1234/guess_nums"
-	var response = "{\n  \"data\": [%s\n  ],\n  \"meta\": {\n    \"api\": \"%s\",\n    \"timestamp\": \"%s\",\n    \"cryptic_hash\": \"%s\"\n  }\n}"
+	var response = "{\n  \"data\": [%s\n  ],\n  \"meta\": {\n    \"api\": \"%s\",\n    \"frequency\": 89.1,\n    \"timestamp\": %s\n  }\n}"
 	var json_num_guesses = ""
-	randomize()
 	var secret_message = ""
-	if len(guess_nums) < 5:
-		secret_message = Dialogue.POSSIBLE_NUM_GUESS_SECRET_MESSAGES[len(guess_nums)]
-#	var secret_message = Dialogue.POSSIBLE_NUM_GUESS_SECRET_MESSAGES[randi() % len(Dialogue.POSSIBLE_NUM_GUESS_SECRET_MESSAGES)]
-	var cryptic_hash = create_random_hash_with_secret_message(secret_message)
 	for i in range(0, len(guess_nums)):
-		json_num_guesses += "\n    {\n      \"guess\": %s,\n      \"response\": %s\n    }," % [str(guess_nums[i]), str(is_guess_number_correct(guess_nums[i])).to_lower()]
-	return response % [json_num_guesses.substr(0, len(json_num_guesses)-1), api_url, str(OS.get_ticks_msec()), cryptic_hash]
+		json_num_guesses += "\n    {\n      \"response\": %s,\n      \"guess\": %s,\n      \"cryptic_hash\": \"%s\"\n    }," % [str(is_guess_number_correct(guess_nums[i])).to_lower(), str(guess_nums[i]), guess_nums_hash_history[i]]
+	return response % [json_num_guesses.substr(0, len(json_num_guesses)-1), api_url, str(OS.get_ticks_msec())]
